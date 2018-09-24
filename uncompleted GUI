@@ -1,0 +1,65 @@
+import sys
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton,QLineEdit,QLabel, QTextEdit, QFileDialog
+
+class Example(QWidget):
+    
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+    
+    def initUI(self):
+        self.resize(1200,800)
+        self.setWindowTitle('BOM Edit Tool')
+        
+        self.lb1 = QLabel('BOM Edit Tool',self)
+      
+        self.lb1.move(600,50)
+        self.lb2 = QLabel('旧BOM',self)
+        self.lb2.move(100,200)
+        self.lb3 = QLabel('新BOM',self)
+        self.lb3.move(100,400)
+        
+        
+        
+        
+        self.bt1 = QPushButton('开始',self)
+        self.bt1.move(200,700)
+        self.bt2 = QPushButton('退出',self)
+        self.bt2.move(400,700)
+        self.bt3 = QPushButton('打开文件',self)
+        self.bt3.move(1000,200)
+        self.bt4 = QPushButton('打开文件',self)
+        self.bt4.move(1000,400)
+        
+        
+        self.tx1 = QTextEdit(self)
+        self.tx1.setGeometry(200,200,250,800)
+        self.tx2 = QTextEdit(self)
+        self.tx2.setGeometry(200,400,450,800)
+        
+        '''
+        self.bt3.clicked.connect(self.openfile)
+        self.bt3.clicked.connect(self.openfile)
+        
+    def openfile(self):
+        fname = QFileDialog.getOpenFileName(self,'打开文件','./')
+        #self.tx1.setText(fname)
+       ''' 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        self.show()  
+        
+        
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    ex = Example()
+    sys.exit(app.exec_())
+    
